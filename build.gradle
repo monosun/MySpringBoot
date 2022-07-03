@@ -28,6 +28,12 @@ repositories {
 dependencies {
     //compile --> implementation
     // testCompile --> testImplementation
-    implementation ("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+    implementation("org.projectlombok:lombok")
+    implementation("junit:junit:4.13.2")
+    /* annotation 을 적용 */
+    annotationProcessor('org.projectlombok:lombok')
+
     testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testAnnotationProcessor('org.projectlombok:lombok')
 }
