@@ -1,5 +1,6 @@
 package com.monosun.book.springboot.domain.posts;
 
+import com.monosun.book.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 //JPA
 @Entity  //posts table
-public class Posts {
+public class Posts extends BaseTimeEntity {
 
     @Id  //PK
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK Rule auto_increment
