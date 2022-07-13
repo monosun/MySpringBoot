@@ -1,7 +1,6 @@
 package com.monosun.book.springboot.web;
 
 import com.monosun.book.springboot.service.posts.PostsService;
-import com.monosun.book.springboot.web.dto.PostsListResponseDto;
 import com.monosun.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -9,14 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@RequiredArgsConstructor
-@Controller
+/**
+ * Controller  임
+ */
+@RequiredArgsConstructor  //인자로 생성자를 자동으로 생성한다. final 인 모든 인자값에 대해서 lomok에서 생성자를 만들어준다.
+@Controller //Controller임을 정의
 public class IndexController {
 
     private final PostsService postsService;
 
-    @GetMapping("/")
+    @GetMapping("/") // /로 GET 방식으로 요청을 들어오는 경우
     public String index(Model model){
+        //Model 에 게시글들을 모두 담아서 넘긴다.
         model.addAttribute("posts",postsService.findAllDesc());
         return "index";
     }

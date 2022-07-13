@@ -8,8 +8,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 //lombook
-@Getter
-@NoArgsConstructor
+
+/**
+ * 게시글 저장 객체
+ */
+@Getter // getter 메소드 생성 non-static field
+@NoArgsConstructor //인자없는 생성자
 //JPA
 @Entity  //posts table
 public class Posts extends BaseTimeEntity {

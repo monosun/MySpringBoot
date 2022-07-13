@@ -4,6 +4,9 @@ import com.monosun.book.springboot.domain.posts.Posts;
 
 import java.time.LocalDateTime;
 
+/**
+ *
+ */
 public class PostsListResponseDto {
     private Long id;
     private String title;
