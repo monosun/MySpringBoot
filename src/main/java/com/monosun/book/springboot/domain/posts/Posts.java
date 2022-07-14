@@ -15,10 +15,10 @@ import javax.persistence.*;
 @Getter // getter 메소드 생성 non-static field
 @NoArgsConstructor //인자없는 생성자
 //JPA
-@Entity  //posts table
+@Entity  //posts table 테이블과 링크될 클래스임을 표시
 public class Posts extends BaseTimeEntity {
 
-    @Id  //PK
+    @Id  //해당 테이블의 PK필드를 나타냅니다.
     @GeneratedValue(strategy = GenerationType.IDENTITY) //PK Rule auto_increment
     private Long id;
 

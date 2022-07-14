@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
  * 글을 처리하는 Controller
  */
 @RequiredArgsConstructor
-@RestController
+@RestController //JSON을 반환하는 컨트롤러로 만들어 준다.
 public class PostsApiController {
     private final PostsService postsService;
 
