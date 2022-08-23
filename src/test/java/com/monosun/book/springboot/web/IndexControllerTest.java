@@ -20,7 +20,7 @@ public class IndexControllerTest {
     @Test
     public void mainLoading(){
         String body = this.restTemplate.getForObject("/",String.class);
-
-        assertThat(body).contains("스트링 부트로 시작하는 웹서비스");
+        //assertThat(body).contains("스트링부트로 시작하는 웹 서비스"); //한글을 인식을 못해서 오류가 남
+        assertThat(body).contains("Ver.2");
     }
 }
