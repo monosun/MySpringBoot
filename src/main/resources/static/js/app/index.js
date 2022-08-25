@@ -26,7 +26,6 @@ var main = {
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
-            alert(data);
         }).done(function() {
             alert('글이 등록되었습니다.');
             window.location.href = '/';
