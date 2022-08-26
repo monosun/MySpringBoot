@@ -1,4 +1,3 @@
-
 language: java
 jdk:
   - openjdk8
@@ -6,12 +5,36 @@ branches:
   only:
     - master
 
+# 빌드 전에 gradlew의 권한을 추가한다.
+before_install:
+  - chmod +x gradlew
+
 #Travis CI 서버의 Home
 cache:
   directories:
     - '$HOME/.m2/repository'
     - '$HOME/.gradle'
+
 script: "./gradlew clean build"
+
+before_deploy:
+  - zip -r MySpringBoot *
+  - mkdir -p deploy
+  - mv MySpringBoot.zip deploy/MySpringBoot.zip
+
+deploy:
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+
+    bucket: springboot-monosun-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
+
+
 
 #CI 실행 완료시 메일로 알람
 notifications:
