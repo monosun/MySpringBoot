@@ -19,7 +19,7 @@ script: "./gradlew clean build"
 
 before_deploy:
   - mkdir -p myspringboot # zip에 포함시킬 파일들을 담을 디렉토리 생성
-#  - cp scripts/*.sh myspringboot/
+  - cp scripts/*.sh myspringboot/
   - cp appspec.yml myspringboot/
   - cp build/libs/*.jar myspringboot/
   - cd myspringboot && zip -r myspringboot * # before-deploy로 이동후 전체 압축
